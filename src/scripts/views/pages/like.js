@@ -4,7 +4,7 @@ import { createRestaurantItemTemplate } from '../templates/template-creator';
 const Like = {
     async render() {
         return `
-    <div class="content">
+    <div id="query" class="content">
       <h2 class="latest__label">Liked Restaurants</h2>
       <div id="restaurants" class="posts">
  

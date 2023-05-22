@@ -10,18 +10,19 @@ Before(({ I }) => {
 
 Scenario('showing empty liked resto', ({ I }) => {
     I.seeElement('#query');
-    I.see('Tidak ada restaurant untuk ditampilkan', '.post-item__not__found');
+    I.see('Tidak ada restaurant untuk ditampilkan', 'post-item__not__found');
 });
 
 Scenario('liking one resto', ({ I }) => {
-    I.see('Tidak ada restaurant untuk ditampilkan', '.post-item__not__found');
+    I.see('Tidak ada restaurant untuk ditampilkan', 'post-item__not__found');
 
     I.amOnPage('/');
     // … kita akan mengisi uji coba berikutnya …
 });
 
 Scenario('liking one resto', async({ I }) => {
-    I.see('Tidak ada restaurant untuk ditampilkan', '.post-item__not__found');
+    I.waitForElement('.post-item__title a', 10);
+    I.see('Tidak ada restaurant untuk ditampilkan', 'post-item__not__found');
 
     I.amOnPage('/');
 

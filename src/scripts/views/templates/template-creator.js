@@ -1,13 +1,12 @@
 /* eslint-disable prefer-template */
 import CONFIG from '../../globals/config';
 
-const createRestaurantDetailTemplate = (restaurant) => `   
-    <div class="detail">    
+const createRestaurantDetailTemplate = (restaurant) => `     
+<div class="post-item">   
+<div class="post-item__content">
 <h2 class="post-item__title">${restaurant.name}</h2>
         <img class="post-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL + '/' + restaurant.pictureId}" alt="${restaurant.name}" />
-        
-        <div class="post-item__content">
-        <h2>Main Information</h2>
+              <h2>Main Information</h2>
         <h4>Area Point: </h4>
 <p>${restaurant.city}</p>
         <h4>Average Rating</h4>
@@ -54,8 +53,8 @@ const createRestaurantDetailTemplate = (restaurant) => `
         <p>Pada ${restaurant.customerReviews[0].date}</p>
       </div>
     </div>
-</div>
-    </div>`;
+</div></div>
+`;
 
 const createRestaurantItemTemplate = (restaurant) => `
     <div class="post-item">
