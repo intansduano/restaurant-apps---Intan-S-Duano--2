@@ -5,7 +5,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 <div class="post-item">   
 <div class="post-item__content">
 <h2 class="post-item__title">${restaurant.name}</h2>
-        <img class="post-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL + '/' + restaurant.pictureId}" alt="${restaurant.name}" />
+        <img class="post-item__thumbnail lazyload" data-src="${CONFIG.BASE_IMAGE_URL + '/' + restaurant.pictureId}" alt="${restaurant.name}" />
               <h2>Main Information</h2>
         <h4>Area Point: </h4>
 <p>${restaurant.city}</p>
@@ -53,15 +53,16 @@ const createRestaurantDetailTemplate = (restaurant) => `
         <p>Pada ${restaurant.customerReviews[0].date}</p>
       </div>
     </div>
-</div></div>
+</div>
+</div>
 `;
 
 const createRestaurantItemTemplate = (restaurant) => `
     <div class="post-item">
         <div class="post-item__content">
-            <img class="post-item__thumbnail"
-            src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name} Picture">
-            <h1 class="post-item__title" tabindex="0">${restaurant.name} Restaurant</h1>
+            <img class="post-item__thumbnail lazyload"
+            data-src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name} Picture">
+            <a href="#/restaurant/${restaurant.id}"> <h1 class="post-item__title" tabindex="0">${restaurant.name} Restaurant</h1><a/>
             <h4 class="post-item_city" tabindex="0">
             Location: ${restaurant.city}</h4>
             <h4 class="rating">Average Rating: ⭐️${restaurant.rating}⭐️</h4>

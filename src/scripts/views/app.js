@@ -3,6 +3,9 @@ import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 import FooterBar from '../component/footer';
 import NavBar from '../component/nav-bar';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 
 class App {
     constructor({ button, drawer, content }) {
@@ -20,7 +23,7 @@ class App {
             content: this._content,
         });
 
-        // kita bisa menginisiasikan komponen lain bila ada
+
     }
 
     async renderPage() {

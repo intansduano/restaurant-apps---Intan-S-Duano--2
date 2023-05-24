@@ -1,11 +1,14 @@
 import 'regenerator-runtime';
 import '../styles/main.scss';
 import '../styles/responsive.scss';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import data from '../DATA.json';
 import App from './views/app';
 import swRegister from './utils/sw-register';
 import FooterBar from './component/footer';
 import NavBar from './component/nav-bar';
+
 
 // App
 const app = new App({

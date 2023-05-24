@@ -8,11 +8,14 @@
         "build": "webpack --config webpack.prod.js",
         "test": "karma start",
         "lint": "eslint ./src",
-        "serve": "http-server dist",
-        "e2e": "codeceptjs run --steps"
+        "serve": "http-server dist --port 8080",
+        "e2e": "codeceptjs run --steps",
+        "build-image": "node sharp.js",
+        "start": "node index.js",
+        "build-serve": "npm run build && npm run serve"
     },
     "keywords": [],
-    "author": "your_name <your.email@domain.com>",
+    "author": "your_name <your.email@domain.npmcom>",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.21.5",
@@ -26,6 +29,8 @@
         "eslint-plugin-import": "^2.27.5",
         "html-webpack-plugin": "^5.5.1",
         "http-server": "^14.1.1",
+        "imagemin-mozjpeg": "^9.0.0",
+        "imagemin-webpack-plugin": "^2.4.2",
         "jasmine-ajax": "^4.0.0",
         "jasmine-core": "^4.2.0",
         "karma": "^5.2.3",
@@ -34,11 +39,13 @@
         "karma-jasmine": "^4.0.2",
         "karma-sourcemap-loader": "^0.3.8",
         "karma-webpack": "^5.0.0",
-        "puppeteer": "^20.2.1",
+        "puppeteer": "^20.3.0",
         "sass": "^1.61.0",
         "sass-loader": "^13.2.2",
+        "sharp": "^0.32.1",
         "style-loader": "^3.3.2",
         "webpack": "^5.81.0",
+        "webpack-bundle-analyzer": "^4.8.0",
         "webpack-cli": "^4.10.0",
         "webpack-dev-server": "^4.13.3",
         "webpack-merge": "^5.8.0",
@@ -47,6 +54,8 @@
     },
     "dependencies": {
         "idb": "^7.1.1",
+        "lazysizes": "^5.3.2",
+        "lodash.filter": "^4.6.0",
         "regenerator-runtime": "^0.13.11",
         "workbox-window": "^6.5.4"
     }
