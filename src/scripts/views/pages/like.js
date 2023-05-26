@@ -7,7 +7,6 @@ const Like = {
         return `
     <div id="query" class="content">
             <h2 class="latest__label">Your Favorite Restaurants</h2>
-            <h3 class="resto__empty_label">You dont have any favorite restaurant</h3>
             <div id="restaurants" class="posts">
         </div>
     </div>
