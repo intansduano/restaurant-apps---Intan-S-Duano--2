@@ -9,7 +9,6 @@ import swRegister from './utils/sw-register';
 import FooterBar from './component/footer';
 import NavBar from './component/nav-bar';
 
-
 // App
 const app = new App({
     button: document.querySelector('#hamburgerButton'),

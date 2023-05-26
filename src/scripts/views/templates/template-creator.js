@@ -60,16 +60,18 @@ const createRestaurantDetailTemplate = (restaurant) => `
 const createRestaurantItemTemplate = (restaurant) => `
     <div class="post-item">
         <div class="post-item__content">
+        <figure>
             <img class="post-item__thumbnail lazyload"
             data-src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" alt="${restaurant.name} Picture">
-            <a href="#/restaurant/${restaurant.id}"> <h1 class="post-item__title" tabindex="0">${restaurant.name} Restaurant</h1><a/>
+            <h1 class="post-item__title"><a href="#/restaurant/${restaurant.id}">${restaurant.name} Restaurant</a></h1>
             <h4 class="post-item_city" tabindex="0">
             Location: ${restaurant.city}</h4>
-            <h4 class="rating">Average Rating: ⭐️${restaurant.rating}⭐️</h4>
+            <h4 class="rating">Average Rating: ⭐️${restaurant.rating}⭐️</h4>s
             <p class="post-item__description" tabindex="0">${restaurant.description}</p>
             <a tabindex="0 " href="https://www.instagram.com/tans.smith/ " class="socmed-link ">Info Restaurant Contact</a><br>
-            <a href="#/restaurant/${restaurant.id}" class="button-item" tabindex="0">Click For More Info</a>  
-          </div>
+            <!--<a href="#/restaurant/${restaurant.id}" class="button-item resto__selector" tabindex="0">Click For More Info</a> -->
+            </div>
+        </figure>
     </div>
 `;
 

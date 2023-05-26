@@ -1,5 +1,6 @@
 import 'regenerator-runtime';
 import CacheHelper from './utils/cache-helper';
+import { precacheAndRoute } from 'workbox-precaching';
 
 // Asset untuk Caching
 const assetsToCache = [
@@ -20,23 +21,22 @@ const assetsToCache = [
 ];
 
 self.addEventListener('install', (event) => {
-    console.log('Installing Service Worker ...');
-
-    // TODO: Caching App Shell Resource
     event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]));
 });
 
 self.addEventListener('activate', (event) => {
-    console.log('Activating Service Worker ...');
-
-    // TODO: Delete old caches
     event.waitUntil(CacheHelper.deleteOldCache());
 });
 
 self.addEventListener('fetch', (event) => {
-    console.log(event.request);
-
-    event.respondWith(fetch(event.request));
-    // TODO: Add/get fetch request to/from caches
     event.respondWith(CacheHelper.revalidateCache(event.request));
+});
+
+precacheAndRoute(self.__WB_MANIFEST);
+self.addEventListener('install', () => {
+    console.log('Service Worker: Installed');
+    self.skipWaiting();
+});
+self.addEventListener('push', () => {
+    console.log('Service Worker: Pushed');
 });

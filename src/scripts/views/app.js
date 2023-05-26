@@ -6,7 +6,6 @@ import NavBar from '../component/nav-bar';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
-
 class App {
     constructor({ button, drawer, content }) {
         this._button = button;
@@ -22,8 +21,6 @@ class App {
             drawer: this._drawer,
             content: this._content,
         });
-
-
     }
 
     async renderPage() {
