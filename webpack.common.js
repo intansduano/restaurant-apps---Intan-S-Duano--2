@@ -86,7 +86,9 @@ module.exports = {
                 }),
             ],
         }),
-        new BundleAnalyzerPlugin(),
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'disabled'
+        }),
         new WorkboxWebpackPlugin.GenerateSW({
             swDest: './sw.bundle.js',
         }),
